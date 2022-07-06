@@ -1,0 +1,27 @@
+{
+    "name": "liopoos/booze",
+    "description": "HTTP library support for hades",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^7.0",
+        "php": "^7.3",
+        "ext-json": "*",
+        "ext-simplexml": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "hades",
+            "email": "hades_dev@foxmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Lopoos\\Booze\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
