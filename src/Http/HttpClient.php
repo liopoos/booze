@@ -54,7 +54,7 @@ abstract class HttpClient
      * @param string $url
      * @param array $headers
      * @param array $body
-     * @return string
+     * @return mixed
      * @throws GuzzleException
      */
     public function get(string $url, array $body = [], array $headers = [])
@@ -73,7 +73,7 @@ abstract class HttpClient
      * @param string $url
      * @param array $headers
      * @param array $body
-     * @return string
+     * @return mixed
      * @throws GuzzleException
      */
     public function post(string $url, array $body = [], array $headers = [])
