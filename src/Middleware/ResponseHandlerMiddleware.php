@@ -54,7 +54,7 @@ class ResponseHandlerMiddleware
      */
     public function handleErrorResponse($response)
     {
-        switch ($response->getStatusCode) {
+        switch ($response->getStatusCode()) {
             case 401:
                 throw new UnauthorizedHttpException;
             case 404:
