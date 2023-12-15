@@ -1,6 +1,6 @@
 {
     "name": "liopoos/booze",
-    "description": "HTTP library support for hades",
+    "description": "A simple HTTP library based on Guzzle",
     "type": "library",
     "require": {
         "guzzlehttp/guzzle": "^7.0",
