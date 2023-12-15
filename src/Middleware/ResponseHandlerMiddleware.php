@@ -4,7 +4,7 @@ namespace Lopoos\Booze\Middleware;
 
 
 use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\Stream;
+use Lopoos\Booze\Exception\AccessDeniedHttpException;
 use Lopoos\Booze\Exception\ApiException;
 use Lopoos\Booze\Exception\NotFoundHttpException;
 use Lopoos\Booze\Exception\UnauthorizedHttpException;
@@ -19,7 +19,7 @@ class ResponseHandlerMiddleware
      * @param Response $response
      * @param array $options
      * @return MessageInterface|void
-     * @throws ApiException|UnauthorizedHttpException|NotFoundHttpException
+     * @throws ApiException|UnauthorizedHttpException|NotFoundHttpException|AccessDeniedHttpException
      */
     public function __invoke(Response $response, array $options = [])
     {
@@ -30,7 +30,7 @@ class ResponseHandlerMiddleware
             return $response->withBody($stream);
         }
 
-        $this->handleErrorResponse($response);
+        $this->handleErrorResponse($response, $stream);
     }
 
     /**
@@ -48,19 +48,23 @@ class ResponseHandlerMiddleware
      * Handles unsuccessful error codes
      *
      * @param $response
+     * @param $stream
      * @throws ApiException
-     * @throws UnauthorizedHttpException
      * @throws NotFoundHttpException
+     * @throws UnauthorizedHttpException
+     * @throws AccessDeniedHttpException
      */
-    public function handleErrorResponse($response)
+    public function handleErrorResponse($response, $stream)
     {
         switch ($response->getStatusCode()) {
             case 401:
                 throw new UnauthorizedHttpException;
             case 404:
                 throw new NotFoundHttpException;
+            case 403:
+                throw new AccessDeniedHttpException;
             default:
-                throw new ApiException($response);
+                throw new ApiException($stream);
         }
     }
 }

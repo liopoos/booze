@@ -47,7 +47,7 @@ abstract class Client extends HttpClient
      * @param array $headers
      * @return Client
      */
-    protected final function withHeaders(array $headers)
+    protected final function withHeaders(array $headers): Client
     {
         $this->guzzleHandler->push(Middleware::mapRequest((new RequestHandlerMiddleware())->setHeaders($headers)));
 
