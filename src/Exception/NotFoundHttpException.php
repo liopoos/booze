@@ -1,9 +1,7 @@
 <?php
 
-namespace Lopoos\Booze\Exception;
+namespace Liopoos\Booze\Exception;
 
-use Exception;
-
-class NotFoundHttpException extends Exception
+class NotFoundHttpException extends ApiException
 {
 }

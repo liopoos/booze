@@ -1,14 +1,12 @@
 <?php
 
-namespace Lopoos\Booze;
+namespace Liopoos\Booze;
 
-use GuzzleHttp\Client as GuzzleClient;
-use GuzzleHttp\Cookie\CookieJar;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
-use Lopoos\Booze\Http\HttpClient;
-use Lopoos\Booze\Middleware\RequestHandlerMiddleware;
-use Lopoos\Booze\Middleware\ResponseHandlerMiddleware;
+use Liopoos\Booze\Http\HttpClient;
+use Liopoos\Booze\Http\Middleware\RequestHandlerMiddleware;
+use Liopoos\Booze\Http\Middleware\ResponseHandlerMiddleware;
 
 abstract class Client extends HttpClient
 {

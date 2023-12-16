@@ -1,14 +1,14 @@
 <?php
 
-namespace Lopoos\Booze\Middleware;
+namespace Liopoos\Booze\Http\Middleware;
 
 
 use GuzzleHttp\Psr7\Response;
-use Lopoos\Booze\Exception\AccessDeniedHttpException;
-use Lopoos\Booze\Exception\ApiException;
-use Lopoos\Booze\Exception\NotFoundHttpException;
-use Lopoos\Booze\Exception\UnauthorizedHttpException;
-use Lopoos\Booze\Utils\ResponseStream;
+use Liopoos\Booze\Exception\AccessDeniedHttpException;
+use Liopoos\Booze\Exception\ApiException;
+use Liopoos\Booze\Exception\NotFoundHttpException;
+use Liopoos\Booze\Exception\UnauthorizedHttpException;
+use Liopoos\Booze\Utils\ResponseStream;
 use Psr\Http\Message\MessageInterface;
 
 class ResponseHandlerMiddleware

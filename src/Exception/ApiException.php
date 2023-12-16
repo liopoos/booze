@@ -1,9 +1,9 @@
 <?php
 
-namespace Lopoos\Booze\Exception;
+namespace Liopoos\Booze\Exception;
 
-use Exception;
+use GuzzleHttp\Exception\TransferException;
 
-class ApiException extends Exception
+class ApiException extends TransferException
 {
 }
