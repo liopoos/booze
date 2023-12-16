@@ -2,8 +2,6 @@
 
 namespace Liopoos\Booze\Exception;
 
-use Exception;
-
-class UnauthorizedHttpException extends Exception
+class UnauthorizedHttpException extends ApiException
 {
 }
