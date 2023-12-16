@@ -1,6 +1,6 @@
 <?php
 
-namespace Lopoos\Booze\Utils;
+namespace Liopoos\Booze\Utils;
 
 use GuzzleHttp\Psr7\StreamDecoratorTrait;
 use Psr\Http\Message\StreamInterface;

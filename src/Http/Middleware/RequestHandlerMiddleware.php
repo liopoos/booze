@@ -1,6 +1,6 @@
 <?php
 
-namespace Lopoos\Booze\Middleware;
+namespace Liopoos\Booze\Http\Middleware;
 
 use GuzzleHttp\Psr7\Request;
 

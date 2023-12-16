@@ -1,12 +1,9 @@
 <?php
 
-namespace Lopoos\Booze\Http;
+namespace Liopoos\Booze\Http;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use Psr\Http\Message\ResponseInterface;
 
 abstract class HttpClient
 {
@@ -55,7 +52,6 @@ abstract class HttpClient
      * @param array $headers
      * @param array $body
      * @return mixed
-     * @throws GuzzleException
      */
     public function get(string $url, array $body = [], array $headers = [])
     {
@@ -74,7 +70,6 @@ abstract class HttpClient
      * @param array $headers
      * @param array $body
      * @return mixed
-     * @throws GuzzleException
      */
     public function post(string $url, array $body = [], array $headers = [])
     {
@@ -93,7 +88,6 @@ abstract class HttpClient
      * @param array $body
      * @param array $headers
      * @return mixed
-     * @throws GuzzleException
      */
     public function postJson(string $url, array $body, array $headers = [])
     {
@@ -112,7 +106,6 @@ abstract class HttpClient
      * @param array $body
      * @param array $headers
      * @return mixed
-     * @throws GuzzleException
      */
     public function postMultiPart(string $url, array $body, array $headers = [])
     {
@@ -130,7 +123,6 @@ abstract class HttpClient
      * @param string $url
      * @param array $headers
      * @return mixed
-     * @throws GuzzleException
      */
     public function delete(string $url, array $headers = [])
     {
@@ -148,7 +140,6 @@ abstract class HttpClient
      * @param array $headers
      * @param array $body
      * @return mixed
-     * @throws GuzzleException
      */
     public function deleteJson(string $url, array $body = [], array $headers = [])
     {
@@ -166,7 +157,6 @@ abstract class HttpClient
      * @param string $url
      * @param array $headers
      * @return mixed
-     * @throws GuzzleException
      */
     public function patch(string $url, array $headers = [])
     {
@@ -184,7 +174,6 @@ abstract class HttpClient
      * @param array|null $body
      * @param array $headers
      * @return mixed
-     * @throws GuzzleException
      */
     public function put(string $url, array $body = null, array $headers = [])
     {
@@ -203,7 +192,6 @@ abstract class HttpClient
      * @param array|null $body
      * @param array $headers
      * @return mixed
-     * @throws GuzzleException
      */
     public function putJson(string $url, array $body = null, array $headers = [])
     {
@@ -222,7 +210,6 @@ abstract class HttpClient
      * @param array|null $body
      * @param array $headers
      * @return mixed
-     * @throws GuzzleException
      */
     public function putMultiPart(string $url, array $body = null, array $headers = [])
     {

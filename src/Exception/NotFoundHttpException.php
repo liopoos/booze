@@ -1,6 +1,6 @@
 <?php
 
-namespace Lopoos\Booze\Exception;
+namespace Liopoos\Booze\Exception;
 
 use Exception;
 
