@@ -27,7 +27,7 @@ class RequestHandlerMiddleware
      * @param array $options
      * @return Request
      */
-    public function __invoke(Request $request, array $options = [])
+    public function __invoke(Request $request, array $options = []): Request
     {
         foreach ($this->headers as $key => $value) {
             $request = $request->withHeader($key, $value);

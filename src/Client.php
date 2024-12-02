@@ -20,7 +20,7 @@ abstract class Client extends HttpClient
         parent::__construct($guzzleOptions);
 
         $this->guzzleHandler = $this->getHandler();
-        $this->guzzleHandler->push(Middleware::mapResponse(new ResponseHandlerMiddleware));
+        $this->guzzleHandler->push(Middleware::mapResponse(new ResponseHandlerMiddleware()));
     }
 
     /**

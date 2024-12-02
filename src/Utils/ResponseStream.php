@@ -17,6 +17,10 @@ class ResponseStream implements StreamInterface
         $this->contentType = $contentType;
     }
 
+    /**
+     * Get response stream content
+     * @return mixed
+     */
     public function getStreamContents()
     {
         $contents = $this->getContents();
