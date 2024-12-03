@@ -5,7 +5,6 @@ namespace Liopoos\Booze\Http;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Response;
-use Liopoos\Booze\Exception\ApiException;
 
 abstract class HttpClient
 {
@@ -51,16 +50,16 @@ abstract class HttpClient
      * Send a GET request
      *
      * @param string $url
+     * @param array $query
      * @param array $headers
-     * @param array $body
      * @return mixed
      * @throws GuzzleException
      */
-    public function get(string $url, array $body = [], array $headers = [])
+    public function get(string $url, array $query = [], array $headers = [])
     {
         $this->httpResponse = $this->httpClient->get($url, [
             'headers' => $headers,
-            'query' => $body,
+            'query' => $query,
         ]);
 
         return $this->httpResponse->getBody()->getStreamContents();
