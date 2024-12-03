@@ -162,14 +162,16 @@ abstract class HttpClient
      * Sends a PATCH request
      *
      * @param string $url
+     * @param array $body
      * @param array $headers
      * @return mixed
      * @throws GuzzleException
      */
-    public function patch(string $url, array $headers = [])
+    public function patch(string $url, array $body = [], array $headers = [])
     {
         $this->httpResponse = $this->httpClient->patch($url, [
             'headers' => $headers,
+            'json' => $body,
         ]);
 
         return $this->httpResponse->getBody()->getStreamContents();
