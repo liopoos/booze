@@ -9,6 +9,7 @@ use Liopoos\Booze\Exception\ApiException;
 use Liopoos\Booze\Exception\NotFoundHttpException;
 use Liopoos\Booze\Exception\UnauthorizedHttpException;
 use Liopoos\Booze\Utils\ResponseStream;
+use Liopoos\HttpCode\Http;
 use Psr\Http\Message\MessageInterface;
 
 class ResponseHandlerMiddleware
@@ -57,14 +58,14 @@ class ResponseHandlerMiddleware
     public function handleErrorResponse($response, $stream)
     {
         switch ($response->getStatusCode()) {
-            case 401:
-                throw new UnauthorizedHttpException;
-            case 404:
-                throw new NotFoundHttpException;
-            case 403:
-                throw new AccessDeniedHttpException;
+            case Http::HTTP_UNAUTHORIZED:
+                throw new UnauthorizedHttpException($stream, Http::HTTP_UNAUTHORIZED);
+            case Http::HTTP_NOT_FOUND:
+                throw new NotFoundHttpException($stream, Http::HTTP_NOT_FOUND);
+            case Http::HTTP_FORBIDDEN:
+                throw new AccessDeniedHttpException($stream, Http::HTTP_FORBIDDEN);
             default:
-                throw new ApiException($stream);
+                throw new ApiException($stream, $response->getStatusCode());
         }
     }
 }
