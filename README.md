@@ -2,6 +2,12 @@
 
 A simple HTTP library based on Guzzle.
 
+## Installation
+
+```bash
+composer require liopoos/booze
+```
+
 ## Usage
 
 ```php
@@ -22,3 +28,7 @@ $apiClient = new ApiClient();
 
 $response = $apiClient->get("https://httpbin.org/get");
 ```
+
+## License
+
+MIT
