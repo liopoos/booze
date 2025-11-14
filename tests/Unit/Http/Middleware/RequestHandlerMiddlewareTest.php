@@ -27,7 +27,7 @@ class RequestHandlerMiddlewareTest extends TestCase
         $this->assertInstanceOf(RequestHandlerMiddleware::class, $result);
     }
 
-    public function testInvokeWithSingleHeader()
+    public function testInvokeAddsHeaderToRequest()
     {
         $headers = ['Authorization' => 'Bearer token123'];
         $this->middleware->setHeaders($headers);
