@@ -23,5 +23,10 @@
         "psr-4": {
             "Liopoos\\Booze\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Liopoos\\Booze\\Tests\\": "tests/"
+        }
     }
 }
