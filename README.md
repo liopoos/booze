@@ -29,6 +29,16 @@ $apiClient = new ApiClient();
 $response = $apiClient->get("https://httpbin.org/get");
 ```
 
+## Testing
+
+Run the test suite:
+
+```bash
+./vendor/bin/phpunit
+```
+
+See the [tests/README.md](tests/README.md) for more information.
+
 ## License
 
 MIT
